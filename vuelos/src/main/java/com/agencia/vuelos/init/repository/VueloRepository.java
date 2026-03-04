@@ -14,10 +14,8 @@ public interface VueloRepository extends JpaRepository<vuelo,Integer>{
 
   @Query("SELECT v FROM vuelo v WHERE v.plazas > :numPlazas")
   List<vuelo> listaVuelos(int numPlazas);
-	
-
-	@Modifying
-	@Transactional
+   @Modifying
+   @Transactional
    @Query("UPDATE vuelo v SET v.plazas = (v.plazas - :numPlazas) WHERE v.idVuelo=:idVuelo and  v.plazas >= :numPlazas")
    void actualizaVuelo (int idVuelo, int numPlazas);
  	
