@@ -25,7 +25,7 @@ public class Vuelo {
 
     private String company;
 
-    private LocalDate fecha;
+    private String fecha;
 
     private double precio;
 

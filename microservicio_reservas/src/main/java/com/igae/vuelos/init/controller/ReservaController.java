@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping(value="v1")
+@RequestMapping(value="/v1")
 public class ReservaController {
 
     private final ReservaService reservaService;
@@ -25,14 +25,14 @@ public class ReservaController {
         this.reservaService = reservaService;
     }
 
-    @PostMapping
+    @PostMapping("crear")
     public ResponseEntity<Reserva> crearReserva(@RequestBody Reserva reserva,
                                                 @RequestParam int totalPersonas) {
         Reserva nueva = reservaService.crearReserva(reserva, totalPersonas);
         return ResponseEntity.ok(nueva);
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<Reserva> listar() {
         return reservaService.listarReservas();
     }
