@@ -17,14 +17,14 @@ public class VuelosServiceImpl implements VuelosService {
     }
 
     @Override
-    public List<Vuelo> obtenerVuelosDisponibles(int numPlazas) {
-        return vuelosRepository.findVuelosDisponibles(numPlazas);
+    public List<Vuelo> obtenerVuelosDisponibles(int numplazas) {
+        return vuelosRepository.findVuelosDisponibles(numplazas);
     }
 
     @Override
-    public boolean actualizarPlazas(int idVuelo, int plazasReservadas) {
+    public boolean actualizarPlazas(int idvuelo, int plazasReservadas) {
 
-        int filas = vuelosRepository.actualizarPlazas(idVuelo, plazasReservadas);
+        int filas = vuelosRepository.actualizarPlazas(idvuelo, plazasReservadas);
 
         return filas > 0;
     }
