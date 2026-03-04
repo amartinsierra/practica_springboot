@@ -25,4 +25,9 @@ public class VueloController {
 		return  new ResponseEntity<>(vueloService.listaVuelos(numPlazas),HttpStatus.OK);	
 	}
 	
+	 @GetMapping (value="actualiza",produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity <Void> listaDeVuelos(int idVuelo, int numPlazas) {		
+		vueloService.actualizaVuelo(idVuelo, numPlazas);
+		return new ResponseEntity<>(HttpStatus.CREATED);
+	}
 }
