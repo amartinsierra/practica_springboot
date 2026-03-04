@@ -18,7 +18,7 @@ public class Reserva {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer idReserva;
 	private String nombre;
 	private String dni;
 	private Integer vuelo;
