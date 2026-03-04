@@ -24,4 +24,8 @@ public interface VueloRepository extends JpaRepository<Vuelo,Integer>{
     @Query(value = "update vuelos set plazas = (plazas - :plazas) where idVuelo= :idVuelo", nativeQuery = true)
     void updateVuelo(@Param("idVuelo") Integer idVuelo, @Param("plazas") Integer plazas);
 	
+	@Transactional(readOnly = true)
+	@Query(value = "select vuelos from vuelos where idVuelo = :idVuelo", nativeQuery = true)
+	Vuelo getVuelo(@Param("idVuelo") Integer idVuelo);
+	
 }
