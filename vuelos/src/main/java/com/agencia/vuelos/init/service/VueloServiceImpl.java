@@ -9,6 +9,12 @@ public class VueloServiceImpl implements VueloService {
 
 	VueloRepository vueloRepository;
 	
+	public VueloServiceImpl(VueloRepository vueloRepository) {
+		super();
+		this.vueloRepository = vueloRepository;
+	}
+
+	
 	@Override
 	public List<vuelo> listaVuelos(int numPlazas) {
 		return vueloRepository.listaVuelos(numPlazas);
@@ -21,5 +27,6 @@ public class VueloServiceImpl implements VueloService {
 		vueloRepository.actualizaVuelo(idVuelo, numPlazas);
 
 	}
+
 
 }
