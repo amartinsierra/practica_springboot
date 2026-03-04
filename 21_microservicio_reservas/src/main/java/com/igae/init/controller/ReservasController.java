@@ -1,5 +1,5 @@
 package com.igae.init.controller;
 
-public class ReservaController {
+public class ReservasController {
 
 }
