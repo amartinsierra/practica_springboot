@@ -10,8 +10,8 @@ import es.igae.proyecto.vuelos.model.Vuelo;
 public interface VuelosRepository extends JpaRepository<Vuelo, Integer> {
 	@Query(value="select * from vuelos where plazas >= ?", nativeQuery=true)
 	List<Vuelo> findVuelosDisponibles(Integer plazas);
-	
-	@Query(value="update vuelos set plazas=? where idVuelo = ?", nativeQuery=true)
-	void updateVuelo(Integer idVuelo, Integer plazas);
+		
+	//@Query("update vuelos set plazas=?2where idVuelo= ?1")
+	//void updateVuelo(Integer idVuelo, Integer plazas);
 
 }

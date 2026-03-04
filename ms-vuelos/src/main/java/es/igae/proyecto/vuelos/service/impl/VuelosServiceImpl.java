@@ -24,7 +24,11 @@ public class VuelosServiceImpl implements VuelosService{
 
 	@Override
 	public void updateVuelo(Integer idVuelo, Integer plazasReservadas) {
-		vuelosRepository.updateVuelo(idVuelo, plazasReservadas);
+		//vuelosRepository.updateVuelo(idVuelo, plazasReservadas);
+		//System.out.println("plazasReservadas: " + plazasReservadas);
+		Vuelo vuelo = vuelosRepository.findById(idVuelo).orElseThrow();
+		vuelo.setPlazas(vuelo.getPlazas() - plazasReservadas);		
+		vuelosRepository.save(vuelo);
 		
 	}
 

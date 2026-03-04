@@ -34,10 +34,11 @@ public class VuelosController {
 		 return new ResponseEntity<>(vuelosService.reservas(plazas), HttpStatus.OK);
 	 }
 
-	 // localhost:8001/vuelos/updateVuelo?idVuelo=1&plazas=33
+	 // localhost:8001/vuelos/updateVuelo?idVuelo=1&plazasReservadas=33
 	 // , consumes=MediaType.APPLICATION_JSON_VALUE
 	 @PostMapping(value="updateVuelo")
 	 public ResponseEntity<Void> updateVuelo(@RequestParam Integer idVuelo, @RequestParam Integer plazasReservadas) {
+		 
 		 vuelosService.updateVuelo(idVuelo, plazasReservadas);
 		 
 		 return null;
