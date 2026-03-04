@@ -2,9 +2,13 @@ package com.agencia.vuelos.init.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.agencia.vuelos.init.model.vuelo;
 import com.agencia.vuelos.init.repository.VueloRepository;
 
+
+@Service
 public class VueloServiceImpl implements VueloService {
 
 	VueloRepository vueloRepository;
