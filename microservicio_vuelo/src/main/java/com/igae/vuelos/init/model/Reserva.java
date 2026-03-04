@@ -14,9 +14,10 @@ import jakarta.persistence.Table;
 @Data
 @Entity
 @Table(name="reservas")
-public class reservas {
+public class Reserva {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idreserva;
 	private String nombre;
 	private String dni;
 	private String vuelo;
