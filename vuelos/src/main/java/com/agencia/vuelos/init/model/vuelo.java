@@ -1,5 +1,6 @@
 package com.agencia.vuelos.init.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,9 +20,15 @@ public class vuelo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idVuelo;
-	private String compania;
-	private String fechaVuelo;
+	@Column(name="company")
+	private String company;
+	@Column(name="fecha")
+	private String fecha;
+	@Column(name="precio")
 	private int precio;
+	@Column(name="plazas")
 	private int plazas;
+	@Column(name="destino")
+	private String destino;
 	
 }
