@@ -23,4 +23,8 @@ public class Reserva {
 	private String dni;
 	private Integer vuelo;
 	
+	public Integer getVuelo() {
+		return this.vuelo;
+	}
+	
 }
