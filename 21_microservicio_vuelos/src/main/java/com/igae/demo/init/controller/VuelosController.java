@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.igae.demo.init.model.Reserva;
 import com.igae.demo.init.model.Vuelos;
+import com.igae.demo.init.repository.VuelosRepository;
 import com.igae.demo.init.service.VuelosService;
 
 import io.swagger.v3.oas.annotations.media.Content;
@@ -24,9 +25,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 public class VuelosController {
 
 	VuelosService vuelosService;
+	VuelosRepository vuelosRepository;
 	
-	public VuelosController(VuelosService vuelosSerive) {
+	public VuelosController(VuelosService vuelosSerive, VuelosRepository vuelosRepository) {
 		this.vuelosService = vuelosSerive;
+		this.vuelosRepository = vuelosRepository;
+		
 	}
 	
 	@GetMapping(value="vuelos",produces=MediaType.APPLICATION_JSON_VALUE)

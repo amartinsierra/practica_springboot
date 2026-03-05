@@ -14,6 +14,7 @@ import com.igae.demo.init.model.Reservas;
 public interface ReservasRepository extends JpaRepository<Reservas,Integer>{
 
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT RESERVAS FROM RESERVAS WHERE IDRESERVAS >= :idReserva", nativeQuery = true)
+	@Query(value = "SELECT RESERVAS FROM RESERVAS WHERE IDRESERVAS >= :idReserva")
 	Reservas getReservas(@Param("plazas") Integer idReserva);
+	
 }

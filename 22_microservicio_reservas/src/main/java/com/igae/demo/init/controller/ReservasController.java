@@ -1,12 +1,16 @@
 package com.igae.demo.init.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.igae.demo.init.model.Reservas;
 import com.igae.demo.init.service.ReservasService;
 import com.igae.demo.init.service.dto.ReservasDTO;
 
@@ -36,5 +40,10 @@ public class ReservasController {
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	
+	
+	@GetMapping(value="reservas",produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Reservas>> listarReservas(){
+		return new ResponseEntity<>(reservasService.getReservas(), HttpStatus.OK);
+	}
 	
 }

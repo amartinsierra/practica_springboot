@@ -15,11 +15,11 @@ public interface VuelosRepository extends JpaRepository<Vuelos,Integer>{
 
 	
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT vuelos FROM vuelos WHERE PLAZAS >= :plazas", nativeQuery = true)
+	@Query(value = "SELECT Vuelos FROM vuelos WHERE PLAZAS > :plazas")
 	List<Vuelos> getVuelos(@Param("plazas") Integer plazas);
 	
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT vuelos FROM vuelos WHERE idVuelo = :idVuelo", nativeQuery = true)
+	@Query(value = "SELECT Vuelos FROM vuelos WHERE idVuelo = :idVuelo")
 	Vuelos getVuelo(@Param("idVuelo") Integer idVuelo);
 	
 	@Transactional

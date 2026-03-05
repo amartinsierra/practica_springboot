@@ -1,0 +1,2 @@
+FROM openjdk:21-ea-jdk-slim
+COPY buscador.jar buscador.jar

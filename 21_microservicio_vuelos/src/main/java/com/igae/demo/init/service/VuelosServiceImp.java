@@ -12,9 +12,14 @@ public class VuelosServiceImp implements VuelosService {
 
 	VuelosRepository vuelos;
 	
+	public VuelosServiceImp(VuelosRepository vuelos) {
+		this.vuelos = vuelos;
+	}
+	
 	@Override
 	public List<Vuelos> getVuelos(Integer plazas) {
 		// TODO Auto-generated method stub
+		if(plazas == null) plazas = 10;
 		return vuelos.getVuelos(plazas);
 		
 	}
