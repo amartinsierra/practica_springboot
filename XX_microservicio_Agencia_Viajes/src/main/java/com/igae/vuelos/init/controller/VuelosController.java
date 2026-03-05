@@ -17,14 +17,14 @@ import lombok.AllArgsConstructor;
 @RestController
 public class VuelosController {
 
-	VuelosService estudiantesService;
-	@GetMapping("estudiantes")
-	public ResponseEntity<List<Vuelo>> estudiantesNota(@RequestParam double min, @RequestParam double max){
-		return ResponseEntity.ok(estudiantesService.estudiantesRango(min, max));
+	VuelosService vuelosService;
+	@GetMapping("vuelos")
+	public ResponseEntity<List<Vuelo>> vuelosPorPlazas(@RequestParam int plazasAReservar){
+		return ResponseEntity.ok(vuelosService.vuelosPorPlazas(plazasAReservar));
 	}
-	@PostMapping("estudiantes")
-	public ResponseEntity<Void> altaEstudiante(@RequestBody Vuelo estudiante){
-		if(estudiantesService.altaEstudiante(estudiante)) {
+	@PostMapping("vuelos")
+	public ResponseEntity<Void> actualizaVuelo(@RequestParam int idVuelo,@RequestParam int plazasAReservar){
+		if(vuelosService.actualizaVuelo(idVuelo, plazasAReservar)) {
 			return ResponseEntity.ok().build();
 		}
 		return ResponseEntity.status(409).build();
