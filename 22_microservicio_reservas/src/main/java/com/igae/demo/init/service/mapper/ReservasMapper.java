@@ -13,7 +13,7 @@ public class ReservasMapper {
 		return new ReservasDTO(null,reserva.getNombre(), reserva.getDni(), null);
 	}
 	
-	public Reservas toEntity(ReservasDto reserva) {
-		return new Item(null,item.getUrl(),item.getTematica(),item.getDescripcion());
+	public Reservas toEntity(ReservasDTO reserva) {
+		return new Reservas(null,reserva.getNombre(), reserva.getDni(), reserva.getPlazas());
 	}
 }
