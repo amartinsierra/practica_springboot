@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.agencia.vuelos.init.model.ActualizaPlazasParametros;
@@ -28,7 +29,7 @@ public class VueloController {
 	}
 	
 	 @PutMapping (value="actualiza",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity <Void> altaVuelo(ActualizaPlazasParametros actualizaPlazasParametros) {	
+	public ResponseEntity <Void> altaVuelo(@RequestBody ActualizaPlazasParametros actualizaPlazasParametros) {	
 		 System.out.println ("+++++++++++ ");
 		 System.out.println (actualizaPlazasParametros.getIdVuelo());
 		 System.out.println (actualizaPlazasParametros.getNumPlazas());
