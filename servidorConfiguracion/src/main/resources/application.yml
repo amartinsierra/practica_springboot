@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: servidorConfiguracion
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///c:\temp\config
+server:
+  port: 8888

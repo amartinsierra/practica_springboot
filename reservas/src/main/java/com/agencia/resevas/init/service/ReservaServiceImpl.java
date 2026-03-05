@@ -13,7 +13,7 @@ import com.agencia.resevas.init.model.reserva;
 import com.agencia.resevas.init.repository.ReservaRepository;
 @Service
 public class ReservaServiceImpl implements ReservaService {
-	// http://localhost:8001/vuelos/actualiza?idVuelo=5&numPlazas=1
+	
 	String urlBase ="http://localhost:8001/vuelos";
 	
 	RestClient restClient;
@@ -34,14 +34,6 @@ public class ReservaServiceImpl implements ReservaService {
 	public boolean altaReserva (ReservaDto reservaDto) {
 	
 
-		String json = """
-		{
-		  "idVuelo": %d,
-		  "numPlazas": %d
-		}
-		""".formatted(reservaDto.getVuelo(),reservaDto.getNumPlazas());
-		
-		
 
 		try {
 			System.out.println ("****1");
