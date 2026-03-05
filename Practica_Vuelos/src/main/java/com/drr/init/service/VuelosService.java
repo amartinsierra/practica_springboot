@@ -1,8 +1,8 @@
-package init.service;
+package com.drr.init.service;
 
 import java.util.List;
 
-import init.model.Vuelo;
+import com.drr.init.model.Vuelo;
 
 public interface VuelosService {
     List<Vuelo> obtenerVuelosDisponibles(int numplazas);

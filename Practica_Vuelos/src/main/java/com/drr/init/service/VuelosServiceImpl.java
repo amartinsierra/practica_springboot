@@ -1,11 +1,11 @@
-package init.service;
+package com.drr.init.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import init.model.Vuelo;
-import init.repository.VuelosRepository;
+import com.drr.init.model.Vuelo;
+import com.drr.init.repository.VuelosRepository;
 
 @Service
 public class VuelosServiceImpl implements VuelosService {
