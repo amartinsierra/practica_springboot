@@ -33,36 +33,7 @@ public class VuelosServiceImpl implements VuelosService,InitializingBean{
 		this.restClient = restClient;
 	}
 
-	@Override
-	public List<Vuelo> estudiantesRango(double min, double max) {
-		return Arrays.stream(restClient.get()
-				.uri(urlBase+"/alumnos")
-				.header("Authorization", "Bearer "+token)
-				.retrieve()
-				.body(Vuelo[].class)
-				).filter(e->e.getCalificacion()>=min&&e.getCalificacion()<=max)
-				.toList();
-	}
-
-	@Override
-	public boolean altaEstudiante(Vuelo estudiante) {
-		try {
-			restClient.post()
-			.uri(urlBase+"/alumnos")
-			.header("Authorization", "Bearer "+token)
-			.contentType(MediaType.APPLICATION_JSON)
-			.body(estudiante)
-			.retrieve()
-			.toBodilessEntity();
-			return true;
-		}catch(HttpClientErrorException ex) {
-			System.out.println(ex.getStatusCode());
-			return false;
-		}
-		
-	}
 	
-
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		generarToken();
@@ -77,6 +48,31 @@ public class VuelosServiceImpl implements VuelosService,InitializingBean{
 					.body(new CredentialsDto(user,pass))
 					.retrieve()
 					.body(String.class);
+	}
+
+	@Override
+	public List<Vuelo> vuelosPorPlazas(int plazasAReservar) {
+		return Arrays.stream(restClient.get()
+				.uri(urlBase+"/vuelos")
+				.header("Authorization", "Bearer "+token)
+				.retrieve()
+				.body(Vuelo[].class)
+				).filter(e->e.getPlazas()>=plazasAReservar)
+				.toList();
+	}
+
+	@Override
+	public boolean actualizaVuelo(int idVuelo, int plazasAReservar) {
+		try {
+			restClient.get()
+			.uri(urlBase+"/vuelos")
+			.header("Authorization", "Bearer "+token)
+			.retrieve();
+			return true;
+		}catch(HttpClientErrorException ex) {
+			System.out.println(ex.getStatusCode());
+			return false;
+		}
 	}
 
 }
