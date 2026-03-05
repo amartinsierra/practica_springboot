@@ -13,7 +13,7 @@ public class MapeadorVueloDto {
 		dto.setIdvuelo(vuelo.getIdvuelo());
 		dto.setDestino(vuelo.getDestino());
 		dto.setCompany(vuelo.getCompany());
-		dto.setFecha(vuelo.getFecha());
+		// dto.setFecha(vuelo.getFecha());
 		dto.setPlazas(vuelo.getPlazas());
 		dto.setPlazas(vuelo.getPlazas());
 		return dto;

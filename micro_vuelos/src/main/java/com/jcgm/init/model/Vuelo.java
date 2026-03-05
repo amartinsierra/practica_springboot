@@ -1,6 +1,5 @@
 package com.jcgm.init.model;
 
-import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,7 +23,7 @@ public class Vuelo {
 	@Column(name = "company")
 	private String company;
 	@Column(name = "fecha")
-	private Date fecha;
+	private String fecha;
 	@Column(name = "precio")
 	private double precio;
 	@Column(name = "plazas")

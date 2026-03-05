@@ -2,17 +2,16 @@ package com.jcgm.init.service;
 
 import java.util.List;
 
-import com.jcgm.init.mappers.MapeadorVueloDto;
+import org.springframework.stereotype.Service;
 import com.jcgm.init.model.Vuelo;
 import com.jcgm.init.repository.VuelosRepository;
 
+@Service
 public class VuelosServiceImpl implements VuelosService {
 	VuelosRepository vuelosRepository;
-	MapeadorVueloDto mapeadorVueloDto;
 	
-	public VuelosServiceImpl(VuelosRepository vuelosRepository, MapeadorVueloDto mapeadorVueloDto) {
+	public VuelosServiceImpl(VuelosRepository vuelosRepository) {
 		this.vuelosRepository = vuelosRepository;
-		this.mapeadorVueloDto = mapeadorVueloDto;
 	}
 
 
