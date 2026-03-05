@@ -1,17 +1,6 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/reservas
-    username: root
-    password: root
-  jpa:
-    hibernate:
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   application:
     name: reservas
-server:
-  port: 9001
-  servlet:
-    context-path: /reservas
+  config:
+    import:
+    - optional:configserver:http://localhost:8888
