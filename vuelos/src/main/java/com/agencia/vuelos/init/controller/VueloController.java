@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.agencia.vuelos.init.model.ActualizaPlazasParametros;
 import com.agencia.vuelos.init.model.vuelo;
 import com.agencia.vuelos.init.service.VueloService;
 
@@ -27,8 +28,11 @@ public class VueloController {
 	}
 	
 	 @PutMapping (value="actualiza",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity <Void> listaDeVuelos(int idVuelo, int numPlazas) {		
-		vueloService.actualizaVuelo(idVuelo, numPlazas);
+	public ResponseEntity <Void> altaVuelo(ActualizaPlazasParametros actualizaPlazasParametros) {	
+		 System.out.println ("+++++++++++ ");
+		 System.out.println (actualizaPlazasParametros.getIdVuelo());
+		 System.out.println (actualizaPlazasParametros.getNumPlazas());
+		vueloService.actualizaVuelo(actualizaPlazasParametros.getIdVuelo(), actualizaPlazasParametros.getNumPlazas());
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 }

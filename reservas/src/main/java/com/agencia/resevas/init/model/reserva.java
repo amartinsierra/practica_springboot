@@ -29,8 +29,8 @@ public class reserva {
 	@Column(name="dni")
 	private String dni;
 	
-	@Column(name="idvuelo")
-	private int idvuelo;
+	@Column(name="vuelo")
+	private int vuelo;
 	
 
 }

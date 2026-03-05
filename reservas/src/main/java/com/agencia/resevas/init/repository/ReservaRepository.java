@@ -12,8 +12,8 @@ import com.agencia.resevas.init.model.reserva;
 public interface ReservaRepository extends JpaRepository<reserva,Integer>{
 
 	
-	  @Query("SELECT r FROM reserva r" )
-	  List<reserva> listaVuelos();
+	  // @Query("SELECT r FROM reserva r" )
+	  List<reserva> findAll();
 	  
 	  
 }
