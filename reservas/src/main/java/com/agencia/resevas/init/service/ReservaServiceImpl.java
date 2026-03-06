@@ -11,11 +11,13 @@ import com.agencia.resevas.init.model.ActualizaPlazasParametros;
 import com.agencia.resevas.init.model.ReservaDto;
 import com.agencia.resevas.init.model.reserva;
 import com.agencia.resevas.init.repository.ReservaRepository;
+import org.springframework.beans.factory.annotation.Value;
 @Service
 public class ReservaServiceImpl implements ReservaService {
 	
-	String urlBase ="http://localhost:8001/vuelos";
-	
+	// String urlBase ="http://localhost:8001/vuelos";
+	@Value("${remote.urlbase}")
+	String urlBase;
 	RestClient restClient;
 	ReservaRepository reservaRepository;
 	
