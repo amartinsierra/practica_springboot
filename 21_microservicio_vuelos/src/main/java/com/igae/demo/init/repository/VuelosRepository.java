@@ -28,5 +28,5 @@ public interface VuelosRepository extends JpaRepository<Vuelos,Integer>{
     void updateVuelo(@Param("idVuelo") Integer idVuelo, @Param("plazas") Integer plazas);
 	
 	
-	
+	// un comentario
 }
